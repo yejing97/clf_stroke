@@ -138,7 +138,7 @@ def LOS(strokes) :
     edges = np.zeros((size, size))
     for i in range(len(strokes)) : 
         sc = calculate_center(strokes[i])
-        U = I.FloatInterval.closed(0, 2*PI) # intervals
+        U = I.closed(0, 2*PI) # intervals
         # s = sorted(strokes, key = lambda x:distance(x,sc))
         index = sorted(range(len(strokes)), key = lambda x:distance(strokes[x],sc))
         for j in index :
@@ -155,7 +155,7 @@ def LOS(strokes) :
                         theta = 2 * PI - math.acos(np.dot(w, h) / np.linalg.norm(w,ord=1) * np.linalg.norm(h,ord=1))
                     min_theta = min(min_theta, theta)
                     max_theta = max(max_theta, theta)
-                h = I.FloatInterval.closed(min_theta, max_theta)
+                h = I.closed(min_theta, max_theta)
                 # print(h)
                 V = U.intersection(h)
                 if not V.is_empty() :
