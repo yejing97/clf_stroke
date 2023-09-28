@@ -44,7 +44,7 @@ def train():
                 output = model(fg_emb)
                 # print(output.shape)
                 # print(gt.reshape(-1).shape)
-                loss = criterion(output, gt.reshape(-1).to(torch.long))
+                loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                 loss_sum += loss.item()
                 nb_batch += 1
                 loss.backward()
