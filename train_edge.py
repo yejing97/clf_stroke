@@ -39,7 +39,7 @@ def train():
         acc_sum = 0
         for fg_emb, gt, id in tqdm(train_loader):
             # print(gt.reshape(-1).shape)
-            try:
+            # try:
                 optimizer.zero_grad()
                 output = model(fg_emb)
                 # print(output.shape)
@@ -49,8 +49,8 @@ def train():
                 nb_batch += 1
                 loss.backward()
                 optimizer.step()
-            except:
-                print(id[0] + ' error!')
+            # except:
+            #     print(id[0] + ' error!')
         losses_train.append(loss_sum / nb_batch)
         print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
