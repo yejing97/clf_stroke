@@ -39,7 +39,7 @@ def train():
         model.train()
         for fg_emb, gt, id in tqdm(train_loader):
             # print(gt.reshape(-1).shape)
-            # try:
+            try:
                 optimizer.zero_grad()
                 output = model(fg_emb.to(torch.device("cuda")))
                 # print(output.shape)
@@ -49,13 +49,14 @@ def train():
                 nb_batch += 1
                 loss.backward()
                 optimizer.step()
-            # except:
-            #     print(id[0] + ' error!')
+            except:
+                print(id[0] + ' error!')
+                print(fg_emb.shape)
         losses_train.append(loss_sum / nb_batch)
         print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
-            # try:
+            try:
                 output = model(fg_emb.to(torch.device("cuda")))
                 _, pred = output.max(dim=1)
                 acc = accuracy_score(gt.reshape(-1), pred.reshape(-1).cpu())
@@ -63,8 +64,9 @@ def train():
                 loss_val += loss.item()
                 acc_sum += acc
                 nb_val += 1
-            # except:
-            #     print(id)
+            except:
+                print(id)
+                print(fg_emb.shape)
         accs.append(acc_sum / nb_val)
         losses_val.append(loss_val / nb_val)
         print('epoch: {}, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
