@@ -9,7 +9,7 @@ class MLP(torch.nn.Module):
         self.softmax = torch.nn.Softmax(dim=1)
     
     def forward(self, x):
-        x = x.view(x.size(1)*x.size(2), -1).to(torch.float32)
+        x = x.view(-1, x.size(1)*x.size(2)).to(torch.float32)
         x = self.fc1(x)
         x = self.relu(x)
         x = self.fc2(x)
