@@ -37,7 +37,7 @@ def train():
         nb_val = 0
         acc_sum = 0
         model.train()
-        for fg_emb, gt, id in tqdm(train_loader):
+        for fg_emb, gt, id in tqdm(train_loader[:100]):
             if fg_emb.size(1) != 0:
                 # print(gt.reshape(-1).shape)
                 try:
