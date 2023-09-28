@@ -41,7 +41,7 @@ def train():
             # print(gt.reshape(-1).shape)
             # try:
                 optimizer.zero_grad()
-                output = model(fg_emb)
+                output = model(fg_emb.to(torch.device("cuda")))
                 # print(output.shape)
                 # print(gt.reshape(-1).shape)
                 loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
