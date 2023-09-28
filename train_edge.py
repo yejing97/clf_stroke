@@ -38,35 +38,37 @@ def train():
         acc_sum = 0
         model.train()
         for fg_emb, gt, id in tqdm(train_loader):
-            # print(gt.reshape(-1).shape)
-            try:
-                optimizer.zero_grad()
-                output = model(fg_emb.to(torch.device("cuda")))
-                # print(output.shape)
+            if fg_emb.size(1) != 0:
                 # print(gt.reshape(-1).shape)
-                loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
-                loss_sum += loss.item()
-                nb_batch += 1
-                loss.backward()
-                optimizer.step()
-            except:
-                print(id[0] + ' error!')
-                print(fg_emb.shape)
+                try:
+                    optimizer.zero_grad()
+                    output = model(fg_emb.to(torch.device("cuda")))
+                    # print(output.shape)
+                    # print(gt.reshape(-1).shape)
+                    loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
+                    loss_sum += loss.item()
+                    nb_batch += 1
+                    loss.backward()
+                    optimizer.step()
+                except:
+                    print(id[0] + ' error!')
+                    print(fg_emb.shape)
         losses_train.append(loss_sum / nb_batch)
         print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
-            try:
-                output = model(fg_emb.to(torch.device("cuda")))
-                _, pred = output.max(dim=1)
-                acc = accuracy_score(gt.reshape(-1), pred.reshape(-1).cpu())
-                loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
-                loss_val += loss.item()
-                acc_sum += acc
-                nb_val += 1
-            except:
-                print(id)
-                print(fg_emb.shape)
+            if fg_emb.size(1) != 0:
+                try:
+                    output = model(fg_emb.to(torch.device("cuda")))
+                    _, pred = output.max(dim=1)
+                    acc = accuracy_score(gt.reshape(-1), pred.reshape(-1).cpu())
+                    loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
+                    loss_val += loss.item()
+                    acc_sum += acc
+                    nb_val += 1
+                except:
+                    print(id)
+                    print(fg_emb.shape)
         accs.append(acc_sum / nb_val)
         losses_val.append(loss_val / nb_val)
         print('epoch: {}, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
