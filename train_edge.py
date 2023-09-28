@@ -55,7 +55,7 @@ def train():
         print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
-            try:
+            # try:
                 output = model(fg_emb)
                 _, pred = output.max(dim=1)
                 acc = accuracy_score(gt.reshape(-1), pred.reshape(-1))
@@ -63,8 +63,8 @@ def train():
                 loss_val += loss.item()
                 acc_sum += acc
                 nb_val += 1
-            except:
-                print(id)
+            # except:
+            #     print(id)
         accs.append(acc_sum / nb_val)
         losses_val.append(loss_val / nb_val)
         print('epoch: {}, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
