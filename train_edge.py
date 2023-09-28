@@ -56,10 +56,10 @@ def train():
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
             # try:
-                output = model(fg_emb)
+                output = model(fg_emb.to(torch.device("cuda")))
                 _, pred = output.max(dim=1)
-                acc = accuracy_score(gt.reshape(-1), pred.reshape(-1))
-                loss = criterion(output, gt.reshape(-1).to(torch.long))
+                acc = accuracy_score(gt.reshape(-1).to(torch.device("cuda")), pred.reshape(-1))
+                loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                 loss_val += loss.item()
                 acc_sum += acc
                 nb_val += 1
