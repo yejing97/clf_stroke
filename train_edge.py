@@ -16,7 +16,7 @@ train_data = Dataset.FuzzyEmbeddingDataset('train', args=data_args)
 val_data = Dataset.FuzzyEmbeddingDataset('val', args=data_args)
 test_data = Dataset.FuzzyEmbeddingDataset('test', args=data_args)
 
-train_loader = torch.utils.data.DataLoader(train_data, batch_size=1, shuffle=True)
+train_loader = torch.utils.data.DataLoader(train_data, batch_size=1, shuffle=False)
 val_loader = torch.utils.data.DataLoader(val_data, batch_size=1, shuffle=True)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size=1, shuffle=True)
 
@@ -37,8 +37,8 @@ def train():
         nb_val = 0
         acc_sum = 0
         model.train()
-        for fg_emb, gt, id in tqdm(train_loader[:100]):
-            if fg_emb.size(1) != 0:
+        for fg_emb, gt, id in tqdm(train_loader):
+            if fg_emb.size(1) != 0 and nb_batch < 100:
                 # print(gt.reshape(-1).shape)
                 try:
                     optimizer.zero_grad()
