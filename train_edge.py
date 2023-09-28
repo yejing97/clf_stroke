@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 from tqdm import tqdm
 data_args = {
     'doc_namespace': "{http://www.w3.org/2003/InkML}",
-    'root_path': "/home/xie-y/data/EXP/EXP"
+    'root_path': "/home/xie-y/data/EXP/EXP/"
 }
 model_args = {
     'input_size': 400,
