@@ -36,23 +36,23 @@ def train():
         nb_batch = 0
         nb_val = 0
         acc_sum = 0
-        # model.train()
-        # for fg_emb, gt, id in tqdm(train_loader):
-        #     # print(gt.reshape(-1).shape)
-        #     # try:
-        #         optimizer.zero_grad()
-        #         output = model(fg_emb.to(torch.device("cuda")))
-        #         # print(output.shape)
-        #         # print(gt.reshape(-1).shape)
-        #         loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
-        #         loss_sum += loss.item()
-        #         nb_batch += 1
-        #         loss.backward()
-        #         optimizer.step()
-        #     # except:
-        #     #     print(id[0] + ' error!')
-        # losses_train.append(loss_sum / nb_batch)
-        # print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
+        model.train()
+        for fg_emb, gt, id in tqdm(train_loader):
+            # print(gt.reshape(-1).shape)
+            # try:
+                optimizer.zero_grad()
+                output = model(fg_emb.to(torch.device("cuda")))
+                # print(output.shape)
+                # print(gt.reshape(-1).shape)
+                loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
+                loss_sum += loss.item()
+                nb_batch += 1
+                loss.backward()
+                optimizer.step()
+            # except:
+            #     print(id[0] + ' error!')
+        losses_train.append(loss_sum / nb_batch)
+        print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
             # try:
