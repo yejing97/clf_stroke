@@ -58,7 +58,7 @@ def train():
             # try:
                 output = model(fg_emb.to(torch.device("cuda")))
                 _, pred = output.max(dim=1)
-                acc = accuracy_score(gt.reshape(-1), pred.reshape(-1))
+                acc = accuracy_score(gt.reshape(-1), pred.reshape(-1).cpu())
                 loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                 loss_val += loss.item()
                 acc_sum += acc
