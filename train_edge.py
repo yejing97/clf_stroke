@@ -50,7 +50,7 @@ def train():
                 loss.backward()
                 optimizer.step()
             except:
-                print(str(id)+'error')
+                print(id[0] + ' error!')
         losses_train.append(loss_sum / nb_batch)
         print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
