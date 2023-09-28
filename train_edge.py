@@ -15,6 +15,7 @@ model_args = {
 train_data = Dataset.FuzzyEmbeddingDataset('train', args=data_args)
 val_data = Dataset.FuzzyEmbeddingDataset('val', args=data_args)
 test_data = Dataset.FuzzyEmbeddingDataset('test', args=data_args)
+print(len(train_data))
 
 train_loader = torch.utils.data.DataLoader(train_data, batch_size=1, shuffle=True)
 val_loader = torch.utils.data.DataLoader(val_data, batch_size=1, shuffle=True)
