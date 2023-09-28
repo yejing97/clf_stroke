@@ -40,13 +40,12 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
         return data_list
     
     def keep_los(self, fg_emb, gt):
-        a = torch.zeros_like(gt)
+        a = torch.ones_like(gt)
         for i in range(a.shape[0]):
             for j in range(a.shape[1]):
-                if torch.all(fg_emb[i, j, :, :] != 0):
-                    a[i, j] = 1
+                if torch.all(fg_emb[i, j, :, :] == 0):
+                    a[i, j] = 0
         indices = torch.nonzero(a.reshape(-1)).squeeze()
-        print(indices)
         fg_emb = fg_emb.view(-1, fg_emb.shape[2], fg_emb.shape[3])[indices]
         gt = gt.reshape(-1)[indices]
         return fg_emb, gt
