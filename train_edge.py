@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 from tqdm import tqdm
 data_args = {
     'doc_namespace': "{http://www.w3.org/2003/InkML}",
-    'root_path': '/home/e19b516g/yejing/data/EXP/'
+    'root_path': '/home/xie-y/data/EXP/EXP'
 }
 model_args = {
     'input_size': 400,
@@ -37,18 +37,20 @@ def train():
         nb_batch = 0
         nb_val = 0
         acc_sum = 0
-        for fg_emb, gt in tqdm(train_loader):
+        for fg_emb, gt, id in tqdm(train_loader):
             # print(gt.reshape(-1).shape)
-
-            optimizer.zero_grad()
-            output = model(fg_emb)
-            # print(output.shape)
-            # print(gt.reshape(-1).shape)
-            loss = criterion(output, gt.reshape(-1).to(torch.long))
-            loss_sum += loss.item()
-            nb_batch += 1
-            loss.backward()
-            optimizer.step()
+            try:
+                optimizer.zero_grad()
+                output = model(fg_emb)
+                # print(output.shape)
+                # print(gt.reshape(-1).shape)
+                loss = criterion(output, gt.reshape(-1).to(torch.long))
+                loss_sum += loss.item()
+                nb_batch += 1
+                loss.backward()
+                optimizer.step()
+            except:
+                print(id)
         losses_train.append(loss_sum / nb_batch)
         print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
