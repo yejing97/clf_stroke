@@ -46,6 +46,7 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
                 if torch.all(fg_emb[i, j, :, :] != 0):
                     a[i, j] = 1
         indices = torch.nonzero(a.reshape(-1)).squeeze()
+        print(indices)
         fg_emb = fg_emb.view(-1, fg_emb.shape[2], fg_emb.shape[3])[indices]
         gt = gt.reshape(-1)[indices]
         return fg_emb, gt
