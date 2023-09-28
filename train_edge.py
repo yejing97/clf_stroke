@@ -31,34 +31,34 @@ def train():
     for epoch in range(100):
         # loop = tqdm(, total=100, desc='train')
 
-        model.train()
         loss_sum = 0
         loss_val = 0
         nb_batch = 0
         nb_val = 0
         acc_sum = 0
-        for fg_emb, gt, id in tqdm(train_loader):
-            # print(gt.reshape(-1).shape)
-            # try:
-                optimizer.zero_grad()
-                output = model(fg_emb.to(torch.device("cuda")))
-                # print(output.shape)
-                # print(gt.reshape(-1).shape)
-                loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
-                loss_sum += loss.item()
-                nb_batch += 1
-                loss.backward()
-                optimizer.step()
-            # except:
-            #     print(id[0] + ' error!')
-        losses_train.append(loss_sum / nb_batch)
-        print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
+        # model.train()
+        # for fg_emb, gt, id in tqdm(train_loader):
+        #     # print(gt.reshape(-1).shape)
+        #     # try:
+        #         optimizer.zero_grad()
+        #         output = model(fg_emb.to(torch.device("cuda")))
+        #         # print(output.shape)
+        #         # print(gt.reshape(-1).shape)
+        #         loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
+        #         loss_sum += loss.item()
+        #         nb_batch += 1
+        #         loss.backward()
+        #         optimizer.step()
+        #     # except:
+        #     #     print(id[0] + ' error!')
+        # losses_train.append(loss_sum / nb_batch)
+        # print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
             # try:
                 output = model(fg_emb.to(torch.device("cuda")))
                 _, pred = output.max(dim=1)
-                acc = accuracy_score(gt.reshape(-1).to(torch.device("cuda")), pred.reshape(-1))
+                acc = accuracy_score(gt.reshape(-1), pred.reshape(-1))
                 loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                 loss_val += loss.item()
                 acc_sum += acc
