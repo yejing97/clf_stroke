@@ -37,7 +37,7 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
             for file in files:
                 if file.endswith('.npy') and os.path.exists(os.path.join(root.replace('FG_EMB', 'GT'), file)):
                     data_list.append(os.path.join(root, file))
-        return data_list[:100]
+        return data_list
     
     def keep_los(self, fg_emb, gt):
         a = torch.ones_like(gt)
