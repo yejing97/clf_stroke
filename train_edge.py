@@ -48,26 +48,26 @@ def train():
                     loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                     loss_sum += loss.item()
                     nb_batch += 1
-                    for name, parms in model.named_parameters():	
-                        print('-->name:', name)
-                        print('-->para:', parms)
-                        print('-->grad_requirs:',parms.requires_grad)
-                        print('-->grad_value:',parms.grad)
-                        print("===")
+                    # for name, parms in model.named_parameters():	
+                    #     print('-->name:', name)
+                    #     print('-->para:', parms)
+                    #     print('-->grad_requirs:',parms.requires_grad)
+                    #     print('-->grad_value:',parms.grad)
+                    #     print("===")
 
 
                     loss.backward()
                     optimizer.step()
 
-                    print("=============update===========")
-                    for name, parms in model.named_parameters():	
-                        print('-->name:', name)
-                        print('-->para:', parms)
-                        print('-->grad_requirs:',parms.requires_grad)
-                        print('-->grad_value:',parms.grad)
-                        print("===")
-                    print(optimizer)
-                    input("=====end=====")
+                    # print("=============update===========")
+                    # for name, parms in model.named_parameters():	
+                    #     print('-->name:', name)
+                    #     print('-->para:', parms)
+                    #     print('-->grad_requirs:',parms.requires_grad)
+                    #     print('-->grad_value:',parms.grad)
+                    #     print("===")
+                    # print(optimizer)
+                    # input("=====end=====")
 
                 except:
                     print(id[0] + ' error!')
