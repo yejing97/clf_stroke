@@ -63,7 +63,7 @@ def train():
                     optimizer.zero_grad()
                     output = model(fg_emb.to(torch.device("cuda")))
                     loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
-                    print(loss.item())
+                    # print(loss.item())
                     loss_sum += loss.item()
                     nb_batch += 1
                     loss.backward()
