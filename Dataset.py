@@ -54,10 +54,17 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
         return len(self.data_list)
     
     def __getitem__(self, index):
-        data_path = self.data_list[index]
-        file_name = data_path.split('/')[-1]
-        fg_emb = torch.from_numpy(np.load(data_path))
-        gt_path = data_path.replace('FG_EMB', 'GT')
-        gt = torch.from_numpy(np.load(gt_path))
-        fg_emb, gt = self.keep_los(fg_emb, gt)
-        return fg_emb, gt, file_name
+        try:
+            data_path = self.data_list[index]
+            file_name = data_path.split('/')[-1]
+            fg_emb = torch.from_numpy(np.load(data_path))
+            gt_path = data_path.replace('FG_EMB', 'GT')
+            gt = torch.from_numpy(np.load(gt_path))
+            fg_emb, gt = self.keep_los(fg_emb, gt)
+            return fg_emb, gt, file_name
+        except:
+            if index < len(self.data_list):
+                print(self.data_list[index])
+                return self.__getitem__(index+1)
+            else:
+                return self.__getitem__(-1)
