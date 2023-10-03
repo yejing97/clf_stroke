@@ -97,7 +97,7 @@ def train():
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
             if fg_emb.size(1) != 0:
-                # try:
+                try:
                     output = model(fg_emb.to(torch.device("cuda")))
                     _, pred = output.max(dim=1)
                     acc = accuracy_score(gt.reshape(-1), pred.reshape(-1).cpu())
@@ -110,9 +110,9 @@ def train():
                         os.makedirs(args.result_path)
                     torch.save(pred, os.path.join(args.result_path, id[0].split('.')[0] + '.pt'))
                     # print(os.path.join(args.result_path, id[0].split('.')[0] + '.pt'))
-                # except:
-                #     print(id)
-                #     print(fg_emb.shape)
+                except:
+                    print(id)
+                    print(fg_emb.shape)
         accs.append(acc_sum / nb_val)
         losses_val.append(loss_val / nb_val)
         print('epoch: {}, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
