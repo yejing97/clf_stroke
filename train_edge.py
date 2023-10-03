@@ -23,7 +23,8 @@ test_loader = torch.utils.data.DataLoader(test_data, batch_size=1, shuffle=True)
 model = mlp.MLP(**model_args).to(torch.device("cuda"))
 
 def train():
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.00001)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = 100, gamma = 0.1)
     criterion = torch.nn.CrossEntropyLoss()
     losses_train = []
     losses_val = []
@@ -58,6 +59,7 @@ def train():
 
                     loss.backward()
                     optimizer.step()
+                    scheduler.step()
 
                     # print("=============update===========")
                     # for name, parms in model.named_parameters():	
