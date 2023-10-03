@@ -14,6 +14,7 @@ parser.add_argument('--input_size', type=int, default=400)
 parser.add_argument('--hidden_size', type=int, default=128)
 parser.add_argument('--output_size', type=int, default=14)
 parser.add_argument('--lr', type=float, default=0.00001)
+parser.add_argument('--batch_size', type=int, default=1)
 parser.add_argument('--model_name', type=str, default="mlp")
 parser.add_argument('--result_path', type=str, default="/home/xie-y/data/EXP/results/" + time.strftime('%Y_%m_%d_%H_%M_%S'))
 args = parser.parse_args()
@@ -59,15 +60,15 @@ def train():
         for fg_emb, gt, id in tqdm(train_loader):
             if fg_emb.size(1) != 0:
                 try:
-                    optimizer.zero_grad()
+                    # optimizer.zero_grad()
                     output = model(fg_emb.to(torch.device("cuda")))
                     loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                     print(loss.item())
                     loss_sum += loss.item()
                     nb_batch += 1
-                    loss.backward()
-                    optimizer.step()
-                    scheduler.step()
+                    # loss.backward()
+                    # optimizer.step()
+                    # scheduler.step()
                 except:
                     print(id[0] + ' error!')
                     print(fg_emb.shape)
