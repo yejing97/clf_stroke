@@ -1,16 +1,31 @@
 import mlp as mlp
 import Dataset as Dataset
 import torch
+from sklearn import svm
 from sklearn.metrics import accuracy_score
 from tqdm import tqdm
+import argparse
+import time, os
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--doc_namespace', type=str, default="{http://www.w3.org/2003/InkML}")
+parser.add_argument('--root_path', type=str, default="/home/xie-y/data/EXP/EXP/")
+parser.add_argument('--input_size', type=int, default=400)
+parser.add_argument('--hidden_size', type=int, default=128)
+parser.add_argument('--output_size', type=int, default=14)
+parser.add_argument('--lr', type=float, default=0.00001)
+parser.add_argument('--model_name', type=str, default="mlp")
+parser.add_argument('--result_path', type=str, default="/home/xie-y/data/EXP/results/" + time.strftime('%Y_%m_%d_%H_%M_%S'))
+args = parser.parse_args()
+
 data_args = {
-    'doc_namespace': "{http://www.w3.org/2003/InkML}",
-    'root_path': "/home/xie-y/data/EXP/EXP/"
+    'doc_namespace': args.doc_namespace,
+    'root_path': args.root_path,
 }
 model_args = {
-    'input_size': 400,
-    'hidden_size': 128,
-    'output_size': 14
+    'input_size': args.input_size,
+    'hidden_size': args.hidden_size,
+    'output_size': args.output_size,
 }
 train_data = Dataset.FuzzyEmbeddingDataset('train', args=data_args)
 val_data = Dataset.FuzzyEmbeddingDataset('val', args=data_args)
@@ -20,10 +35,13 @@ train_loader = torch.utils.data.DataLoader(train_data, batch_size=1, shuffle=Fal
 val_loader = torch.utils.data.DataLoader(val_data, batch_size=1, shuffle=False)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size=1, shuffle=True)
 
-model = mlp.MLP(**model_args).to(torch.device("cuda"))
+if args.model_name == 'mlp':
+    model = mlp.MLP(**model_args).to(torch.device("cuda"))
+else:
+    model = svm.SVC(kernel='linear', C=1).to(torch.device("cuda"))
 
 def train():
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = 100, gamma = 0.1)
     criterion = torch.nn.CrossEntropyLoss()
     losses_train = []
@@ -87,6 +105,10 @@ def train():
                     loss_val += loss.item()
                     acc_sum += acc
                     nb_val += 1
+
+                    if not os.path.exists(args.result_path):
+                        os.makedirs(args.result_path)
+                    torch.save(pred, os.path.join(args.result_path, id.split('.')[0] + '.pt'))
                 except:
                     print(id)
                     print(fg_emb.shape)
