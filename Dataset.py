@@ -51,8 +51,12 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
         return fg_emb, gt
     
     def keep_rel(self, fg_emb, gt):
-        indices = torch.masked_select(gt, gt.ge(1)).to(torch.long)
-        # print(indices)
+        a = torch.ones_like(gt)
+        for i in range(a.shape[0]):
+            for j in range(a.shape[1]):
+                if torch.all(gt[i,j] == 0):
+                    a[i, j] = 0
+        indices = torch.nonzero(a.reshape(-1)).squeeze()
         fg_emb = fg_emb.view(-1, fg_emb.shape[2], fg_emb.shape[3])[indices]
         gt = gt.reshape(-1)[indices]
         return fg_emb, gt
@@ -61,7 +65,7 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
         return len(self.data_list)
     
     def __getitem__(self, index):
-        # try:
+        try:
             data_path = self.data_list[index]
             file_name = data_path.split('/')[-1]
             fg_emb = torch.from_numpy(np.load(data_path))
@@ -70,9 +74,9 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
             # fg_emb, gt = self.keep_los(fg_emb, gt)
             fg_emb, gt = self.keep_rel(fg_emb, gt)
             return fg_emb, gt, file_name
-        # except:
-        #     if index < len(self.data_list):
-        #         print(self.data_list[index])
-        #         return self.__getitem__(index+1)
-        #     else:
-        #         return self.__getitem__(-1)
+        except:
+            if index < len(self.data_list):
+                print(self.data_list[index])
+                return self.__getitem__(index+1)
+            else:
+                return self.__getitem__(-1)
