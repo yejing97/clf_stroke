@@ -32,9 +32,9 @@ train_data = Dataset.FuzzyEmbeddingDataset('train', args=data_args)
 val_data = Dataset.FuzzyEmbeddingDataset('val', args=data_args)
 test_data = Dataset.FuzzyEmbeddingDataset('test', args=data_args)
 
-train_loader = torch.utils.data.DataLoader(train_data, batch_size=1, shuffle=False)
-val_loader = torch.utils.data.DataLoader(val_data, batch_size=1, shuffle=False)
-test_loader = torch.utils.data.DataLoader(test_data, batch_size=1, shuffle=True)
+train_loader = torch.utils.data.DataLoader(train_data, batch_size=args.batch_size, shuffle=False)
+val_loader = torch.utils.data.DataLoader(val_data, batch_size=args.batch_size, shuffle=False)
+test_loader = torch.utils.data.DataLoader(test_data, batch_size=args.batch_size, shuffle=True)
 
 if args.model_name == 'mlp':
     model = mlp.MLP(**model_args).to(torch.device("cuda"))
