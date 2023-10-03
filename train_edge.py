@@ -55,49 +55,49 @@ def train():
         nb_batch = 0
         nb_val = 0
         acc_sum = 0
-        model.train()
-        for fg_emb, gt, id in tqdm(train_loader):
-            if fg_emb.size(1) != 0:
-                # print(gt.reshape(-1).shape)
-                try:
-                    optimizer.zero_grad()
-                    output = model(fg_emb.to(torch.device("cuda")))
-                    # print(output.shape)
-                    # print(gt.reshape(-1).shape)
-                    loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
-                    loss_sum += loss.item()
-                    nb_batch += 1
-                    # for name, parms in model.named_parameters():	
-                    #     print('-->name:', name)
-                    #     print('-->para:', parms)
-                    #     print('-->grad_requirs:',parms.requires_grad)
-                    #     print('-->grad_value:',parms.grad)
-                    #     print("===")
+        # model.train()
+        # for fg_emb, gt, id in tqdm(train_loader):
+        #     if fg_emb.size(1) != 0:
+        #         # print(gt.reshape(-1).shape)
+        #         try:
+        #             optimizer.zero_grad()
+        #             output = model(fg_emb.to(torch.device("cuda")))
+        #             # print(output.shape)
+        #             # print(gt.reshape(-1).shape)
+        #             loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
+        #             loss_sum += loss.item()
+        #             nb_batch += 1
+        #             # for name, parms in model.named_parameters():	
+        #             #     print('-->name:', name)
+        #             #     print('-->para:', parms)
+        #             #     print('-->grad_requirs:',parms.requires_grad)
+        #             #     print('-->grad_value:',parms.grad)
+        #             #     print("===")
 
 
-                    loss.backward()
-                    optimizer.step()
-                    scheduler.step()
+        #             loss.backward()
+        #             optimizer.step()
+        #             scheduler.step()
 
-                    # print("=============update===========")
-                    # for name, parms in model.named_parameters():	
-                    #     print('-->name:', name)
-                    #     print('-->para:', parms)
-                    #     print('-->grad_requirs:',parms.requires_grad)
-                    #     print('-->grad_value:',parms.grad)
-                    #     print("===")
-                    # print(optimizer)
-                    # input("=====end=====")
+        #             # print("=============update===========")
+        #             # for name, parms in model.named_parameters():	
+        #             #     print('-->name:', name)
+        #             #     print('-->para:', parms)
+        #             #     print('-->grad_requirs:',parms.requires_grad)
+        #             #     print('-->grad_value:',parms.grad)
+        #             #     print("===")
+        #             # print(optimizer)
+        #             # input("=====end=====")
 
-                except:
-                    print(id[0] + ' error!')
-                    print(fg_emb.shape)
-        losses_train.append(loss_sum / nb_batch)
-        print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
+        #         except:
+        #             print(id[0] + ' error!')
+        #             print(fg_emb.shape)
+        # losses_train.append(loss_sum / nb_batch)
+        # print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
         model.eval()
         for fg_emb, gt, id in tqdm(val_loader):
             if fg_emb.size(1) != 0:
-                try:
+                # try:
                     output = model(fg_emb.to(torch.device("cuda")))
                     _, pred = output.max(dim=1)
                     acc = accuracy_score(gt.reshape(-1), pred.reshape(-1).cpu())
@@ -110,9 +110,9 @@ def train():
                         os.makedirs(args.result_path)
                     torch.save(pred, os.path.join(args.result_path, id.split('.')[0] + '.pt'))
                     # print(os.path.join(args.result_path, id[0].split('.')[0] + '.pt'))
-                except:
-                    print(id)
-                    print(fg_emb.shape)
+                # except:
+                #     print(id)
+                #     print(fg_emb.shape)
         accs.append(acc_sum / nb_val)
         losses_val.append(loss_val / nb_val)
         print('epoch: {}, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
