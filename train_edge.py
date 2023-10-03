@@ -108,8 +108,8 @@ def train():
 
                     if not os.path.exists(args.result_path):
                         os.makedirs(args.result_path)
-                    # torch.save(pred, os.path.join(args.result_path, id.split('.')[0] + '.pt'))
-                    print(os.path.join(args.result_path, id[0].split('.')[0] + '.pt'))
+                    torch.save(pred, os.path.join(args.result_path, id.split('.')[0] + '.pt'))
+                    # print(os.path.join(args.result_path, id[0].split('.')[0] + '.pt'))
                 except:
                     print(id)
                     print(fg_emb.shape)
