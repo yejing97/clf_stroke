@@ -7,11 +7,13 @@ class MLP(torch.nn.Module):
         self.relu = torch.nn.LeakyReLU()
         self.fc2 = torch.nn.Linear(hidden_size, output_size)
         self.softmax = torch.nn.Softmax(dim=1)
+        self.dropout = torch.nn.Dropout(0.5)
     
     def forward(self, x):
         x = x.view(-1, x.size(2)*x.size(3)).to(torch.float32)
         x = self.fc1(x)
         x = self.relu(x)
+        x = self.dropout(x)
         x = self.fc2(x)
         x = self.softmax(x)
         return x
