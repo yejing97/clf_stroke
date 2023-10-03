@@ -58,37 +58,16 @@ def train():
         model.train()
         for fg_emb, gt, id in tqdm(train_loader):
             if fg_emb.size(1) != 0:
-                # print(gt.reshape(-1).shape)
                 try:
                     optimizer.zero_grad()
                     output = model(fg_emb.to(torch.device("cuda")))
-                    # print(output.shape)
-                    # print(gt.reshape(-1).shape)
                     loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
+                    print(loss.item())
                     loss_sum += loss.item()
                     nb_batch += 1
-                    # for name, parms in model.named_parameters():	
-                    #     print('-->name:', name)
-                    #     print('-->para:', parms)
-                    #     print('-->grad_requirs:',parms.requires_grad)
-                    #     print('-->grad_value:',parms.grad)
-                    #     print("===")
-
-
                     loss.backward()
                     optimizer.step()
                     scheduler.step()
-
-                    # print("=============update===========")
-                    # for name, parms in model.named_parameters():	
-                    #     print('-->name:', name)
-                    #     print('-->para:', parms)
-                    #     print('-->grad_requirs:',parms.requires_grad)
-                    #     print('-->grad_value:',parms.grad)
-                    #     print("===")
-                    # print(optimizer)
-                    # input("=====end=====")
-
                 except:
                     print(id[0] + ' error!')
                     print(fg_emb.shape)
