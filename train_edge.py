@@ -61,12 +61,13 @@ def train():
         for fg_emb, gt, id in tqdm(train_loader):
             if fg_emb.size(1) != 0:
                 # try:
-                    optimizer.zero_grad()
+                    # optimizer.zero_grad()
                     output = model(fg_emb.to(torch.device("cuda")))
                     loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                     # print(loss.item())
                     loss_sum += loss.item()
                     nb_batch += 1
+                    optimizer.zero_grad()
                     loss.backward()
                     optimizer.step()
                     scheduler.step()
