@@ -67,10 +67,10 @@ def train():
                     # print(loss.item())
                     loss_sum += loss.item()
                     nb_batch += 1
-                    optimizer.zero_grad()
-                    loss.backward()
-                    optimizer.step()
-                    scheduler.step()
+                    # optimizer.zero_grad()
+                    # loss.backward()
+                    # optimizer.step()
+                    # scheduler.step()
                 # except:
                 #     print(id[0] + ' error!')
                 #     print(fg_emb.shape)
