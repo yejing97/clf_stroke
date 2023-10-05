@@ -75,6 +75,7 @@ accs = []
 logger.info('----------{}---------------'.format(time.strftime('%m_%d_%H_%M_%S')))
 logger.info('----------start training---------------')
 logger.info('feature number: {}'.format(args.feature_nb))
+logger.info('feature type: {}'.format(args.feature_type))
 logger.info('filter type: {}'.format(args.filter_type))
 logger.info('epoches number: {}'.format(args.epoches))
 logger.info('initial learning rate: {}'.format(args.lr))
