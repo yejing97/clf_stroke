@@ -87,6 +87,7 @@ for epoch in range(100):
     acc_sum = 0
     model.train()
     for fg_emb, gt, id in tqdm(train_loader):
+        print(fg_emb.shape)
         if fg_emb.size(1) != 0:
             try:
                 output = model(fg_emb.to(torch.device("cuda")))
@@ -100,7 +101,7 @@ for epoch in range(100):
             except:
                 logger.debug(id)
                 logger.debug(fg_emb.shape)
-    losses_train.append(loss_sum / nb_batch)
+    # losses_train.append(loss_sum / nb_batch)
     logger.info('epoch: {} end, loss: {}'.format(epoch, loss_sum / nb_batch))
     # print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
     model.eval()
@@ -114,7 +115,7 @@ for epoch in range(100):
                 loss_val += loss.item()
                 acc_sum += acc
                 nb_val += 1
-                pred_path = os.path.join(args.result_path, 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type), time.strftime('%m_%d_%H_%M_%S'))
+                pred_path = os.path.join(args.result_path, 'prediction' , 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type), time.strftime('%m_%d_%H_%M_%S'))
                 if not os.path.exists(pred_path):
                     os.makedirs(pred_path)
                 # pred_path = os.path.join(args.result_path, 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) +'.pt')
