@@ -130,6 +130,9 @@ for epoch in range(args.epoches):
     accs.append(acc_sum / nb_val)
     losses_val.append(loss_val / nb_val)
     logger.info('epoch: {} validation, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
+    model_path = os.path.join(args.result_path, 'model', 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type))
+    torch.save(model.state_dict(), os.path.join(model_path, 'epoch_' + str(epoch) + '.pt'))
+    logger.info('epoch: {} model saved'.format(epoch))
     # print('epoch: {}, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
 
 
