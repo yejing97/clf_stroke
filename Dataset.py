@@ -1,6 +1,5 @@
 import torch
 import os
-import xml.etree.ElementTree as ET
 import numpy as np
 
 # from LG.lg import Lg
@@ -29,6 +28,7 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
         # self.root_path = '/home/e19b516g/yejing/data/EXP/'
         self.data_type = data_type
         self.data_list = self.get_data_list()
+        self.filter_type = args['filter_type']
         print('successfully init Fuzzy Embedding dataset')
     
     def get_data_list(self):
@@ -71,8 +71,10 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
             fg_emb = torch.from_numpy(np.load(data_path))
             gt_path = data_path.replace('FG_EMB', 'GT')
             gt = torch.from_numpy(np.load(gt_path))
-            # fg_emb, gt = self.keep_los(fg_emb, gt)
-            fg_emb, gt = self.keep_rel(fg_emb, gt)
+            if self.filter_type == 'los':
+                fg_emb, gt = self.keep_los(fg_emb, gt)
+            elif self.filter_type == 'rel':
+                fg_emb, gt = self.keep_rel(fg_emb, gt)
             return fg_emb, gt, file_name
         except:
             if index < len(self.data_list):
