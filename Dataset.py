@@ -27,9 +27,9 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
         self.root_path = args['root_path']
         # self.root_path = '/home/e19b516g/yejing/data/EXP/'
         self.data_type = data_type
-        self.data_list = self.get_data_list()
         self.filter_type = args['filter_type']
         self.feature_type = args['feature_type']
+        self.data_list = self.get_data_list()
         print('successfully init Fuzzy Embedding dataset')
     
     def get_data_list(self):
