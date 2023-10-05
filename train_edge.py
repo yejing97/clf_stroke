@@ -19,7 +19,8 @@ parser.add_argument('--output_size', type=int, default=14)
 parser.add_argument('--lr', type=float, default=1e-4)
 parser.add_argument('--batch_size', type=int, default=1)
 parser.add_argument('--epoches', type=int, default=100)
-parser.add_argument('--model_name', type=str, default="mlp")
+# parser.add_argument('--model_name', type=str, default="mlp")
+parser.add_argument('--lr_', type=float, default=0.1)
 parser.add_argument('--result_path', type=str, default="/home/xie-y/data/EXP/results/")
 parser.add_argument('--log', type=str, default="/home/xie-y/data/EXP/results/logs/")
 # parser.add_argument('--result_path', type=str, default="/home/xie-y/data/EXP/results/" + time.strftime('%m_%d_%H_%M_%S'))
@@ -61,13 +62,10 @@ train_loader = torch.utils.data.DataLoader(train_data, batch_size=args.batch_siz
 val_loader = torch.utils.data.DataLoader(val_data, batch_size=args.batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size=args.batch_size, shuffle=True)
 
-if args.model_name == 'mlp':
-    model = mlp.MLP(**model_args).to(torch.device("cuda"))
-else:
-    model = svm.SVC(kernel='linear', C=1).to(torch.device("cuda"))
+model = mlp.MLP(**model_args).to(torch.device("cuda"))
 
 optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
-scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size = 100, gamma = 0.1)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer)
 criterion = torch.nn.CrossEntropyLoss()
 losses_train = []
 losses_val = []
