@@ -72,13 +72,14 @@ criterion = torch.nn.CrossEntropyLoss()
 losses_train = []
 losses_val = []
 accs = []
+logger.info('----------{}---------------'.format(time.strftime('%m_%d_%H_%M_%S')))
 logger.info('----------start training---------------')
 logger.info('feature number: {}'.format(args.feature_nb))
 logger.info('filter type: {}'.format(args.filter_type))
 logger.info('epoches number: {}'.format(args.epoches))
 logger.info('initial learning rate: {}'.format(args.lr))
 
-for epoch in range(100):
+for epoch in range(args.epoches):
     logger.info('epoch: {} start, learning rate: {}'.format(epoch, optimizer.param_groups[0]['lr']))
     loss_sum = 0
     loss_val = 0
@@ -102,7 +103,7 @@ for epoch in range(100):
             #     logger.debug(id)
             #     logger.debug(fg_emb.shape)
     # losses_train.append(loss_sum / nb_batch)
-    logger.info('epoch: {} end, loss: {}'.format(epoch, loss_sum))
+    logger.info('epoch: {} end, loss: {}'.format(epoch, loss_sum / nb_batch))
     # print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
     model.eval()
     for fg_emb, gt, id in tqdm(val_loader):
@@ -115,7 +116,7 @@ for epoch in range(100):
                 loss_val += loss.item()
                 acc_sum += acc
                 nb_val += 1
-                pred_path = os.path.join(args.result_path, 'prediction' , 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type), time.strftime('%m_%d_%H_%M_%S'))
+                pred_path = os.path.join(args.result_path, 'prediction' , 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type))
                 if not os.path.exists(pred_path):
                     os.makedirs(pred_path)
                 # pred_path = os.path.join(args.result_path, 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) +'.pt')
