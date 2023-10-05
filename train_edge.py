@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--doc_namespace', type=str, default="{http://www.w3.org/2003/InkML}")
 parser.add_argument('--root_path', type=str, default="/home/xie-y/data/EXP/")
 parser.add_argument('--feature_nb', type=int, default=5)
+parser.add_argument('--feature_type', type=str, default="FG_EMB")
 parser.add_argument('--input_size', type=int, default=20)
 parser.add_argument('--hidden_size', type=int, default=64)
 parser.add_argument('--filter_type', type=str, default="los")
@@ -30,6 +31,7 @@ data_args = {
     'doc_namespace': args.doc_namespace,
     'root_path': os.path.join(args.root_path, str(args.feature_nb)),
     'filter_type': args.filter_type,
+    'feature_type': args.feature_type,
 }
 # print(data_args)
 model_args = {
@@ -51,7 +53,7 @@ def get_logger(log_path):
     logger.addHandler(sh)
     return logger
 
-log_path = os.path.join(args.log, 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type) + '.log')
+log_path = os.path.join(args.log, 'feautures_' + str(args.feature_type) + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type) + '.log')
 logger = get_logger(log_path)
 
 train_data = Dataset.FuzzyEmbeddingDataset('train', args=data_args)
@@ -114,7 +116,7 @@ for epoch in range(args.epoches):
                 loss_val += loss.item()
                 acc_sum += acc
                 nb_val += 1
-                pred_path = os.path.join(args.result_path, 'prediction' , 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type))
+                pred_path = os.path.join(args.result_path, 'prediction' , 'feautures_' + str(args.feature_type) + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type))
                 if not os.path.exists(pred_path):
                     os.makedirs(pred_path)
                 # pred_path = os.path.join(args.result_path, 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) +'.pt')
@@ -129,7 +131,7 @@ for epoch in range(args.epoches):
     losses_val.append(loss_val / nb_val)
     scheduler.step(loss_val / nb_val)
     logger.info('epoch: {} validation, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
-    model_path = os.path.join(args.result_path, 'model', 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type))
+    model_path = os.path.join(args.result_path, 'model', 'feautures_' + str(args.feature_type) + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type))
     if not os.path.exists(model_path):
         os.makedirs(model_path)
     torch.save(model.state_dict(), os.path.join(model_path, 'epoch_' + str(epoch) + '.pt'))

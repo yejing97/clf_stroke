@@ -29,13 +29,14 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
         self.data_type = data_type
         self.data_list = self.get_data_list()
         self.filter_type = args['filter_type']
+        self.feature_type = args['feature_type']
         print('successfully init Fuzzy Embedding dataset')
     
     def get_data_list(self):
         data_list = []
-        for root, _, files in os.walk(os.path.join(self.root_path, 'FG_EMB', self.data_type)):
+        for root, _, files in os.walk(os.path.join(self.root_path, self.feature_type, self.data_type)):
             for file in files:
-                if file.endswith('.npy') and os.path.exists(os.path.join(root.replace('FG_EMB', 'GT'), file)):
+                if file.endswith('.npy') and os.path.exists(os.path.join(root.replace(self.feature_type, 'GT'), file)):
                     data_list.append(os.path.join(root, file))
         return data_list
     
@@ -69,7 +70,7 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
             data_path = self.data_list[index]
             file_name = data_path.split('/')[-1]
             fg_emb = torch.from_numpy(np.load(data_path))
-            gt_path = data_path.replace('FG_EMB', 'GT')
+            gt_path = data_path.replace(self.feature_type, 'GT')
             gt = torch.from_numpy(np.load(gt_path))
             if self.filter_type == 'los':
                 fg_emb, gt = self.keep_los(fg_emb, gt)
