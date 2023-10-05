@@ -30,7 +30,7 @@ data_args = {
     'root_path': os.path.join(args.root_path, str(args.feature_nb)),
     'filter_type': args.filter_type,
 }
-print(data_args)
+# print(data_args)
 model_args = {
     'input_size': args.input_size,
     'hidden_size': args.hidden_size,

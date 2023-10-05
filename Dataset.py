@@ -33,7 +33,7 @@ class FuzzyEmbeddingDataset(torch.utils.data.Dataset):
     
     def get_data_list(self):
         data_list = []
-        for root, _, files in os.walk(os.path.join(self.root_path + 'FG_EMB', self.data_type)):
+        for root, _, files in os.walk(os.path.join(self.root_path, 'FG_EMB', self.data_type)):
             for file in files:
                 if file.endswith('.npy') and os.path.exists(os.path.join(root.replace('FG_EMB', 'GT'), file)):
                     data_list.append(os.path.join(root, file))
