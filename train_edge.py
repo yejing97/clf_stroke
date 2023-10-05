@@ -96,7 +96,7 @@ for epoch in range(args.epoches):
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
-                scheduler.step()
+                # scheduler.step()
             # except:
             #     logger.debug(id)
             #     logger.debug(fg_emb.shape)
@@ -127,6 +127,7 @@ for epoch in range(args.epoches):
                 # print(fg_emb.shape)
     accs.append(acc_sum / nb_val)
     losses_val.append(loss_val / nb_val)
+    scheduler.step(loss_val / nb_val)
     logger.info('epoch: {} validation, acc: {}, loss: {}'.format(epoch, acc_sum / nb_val, loss_val / nb_val))
     model_path = os.path.join(args.result_path, 'model', 'f_nb_' + str(args.feature_nb) + '_lr_'+ str(args.lr) + '_filter_' + str(args.filter_type))
     if not os.path.exists(model_path):
