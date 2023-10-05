@@ -89,7 +89,7 @@ for epoch in range(100):
     for fg_emb, gt, id in tqdm(train_loader):
         # print(fg_emb.shape)
         if fg_emb.size(1) != 0:
-            try:
+            # try:
                 output = model(fg_emb.to(torch.device("cuda")))
                 loss = criterion(output, gt.reshape(-1).to(torch.long).to(torch.device("cuda")))
                 loss_sum += loss.item()
@@ -99,9 +99,9 @@ for epoch in range(100):
                 loss.backward()
                 optimizer.step()
                 scheduler.step()
-            except:
-                logger.debug(id)
-                logger.debug(fg_emb.shape)
+            # except:
+            #     logger.debug(id)
+            #     logger.debug(fg_emb.shape)
     # losses_train.append(loss_sum / nb_batch)
     logger.info('epoch: {} end, loss: {}'.format(epoch, loss_sum))
     # print('epoch: {}, loss: {}'.format(epoch, loss_sum / nb_batch))
