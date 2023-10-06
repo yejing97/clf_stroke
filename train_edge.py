@@ -99,7 +99,7 @@ for epoch in range(args.epoches):
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
-                # scheduler.step()
+                scheduler.step()
             # except:
             #     logger.debug(id)
             #     logger.debug(fg_emb.shape)
