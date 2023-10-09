@@ -67,7 +67,7 @@ test_loader = torch.utils.data.DataLoader(test_data, batch_size=args.batch_size,
 model = mlp.MLP(**model_args).to(torch.device("cuda"))
 
 optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10, threshold=0.00001, threshold_mode='abs')
 criterion = torch.nn.CrossEntropyLoss()
 losses_train = []
 losses_val = []
@@ -99,7 +99,6 @@ for epoch in range(args.epoches):
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
-                scheduler.step()
             # except:
             #     logger.debug(id)
             #     logger.debug(fg_emb.shape)

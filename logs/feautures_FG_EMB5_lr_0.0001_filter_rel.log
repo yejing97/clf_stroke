@@ -1,0 +1,8 @@
+2023-10-06 18:43:26,826 - INFO - ----------10_06_18_43_26---------------
+2023-10-06 18:43:26,826 - INFO - ----------start training---------------
+2023-10-06 18:43:26,826 - INFO - feature number: 5
+2023-10-06 18:43:26,826 - INFO - feature type: FG_EMB
+2023-10-06 18:43:26,826 - INFO - filter type: rel
+2023-10-06 18:43:26,826 - INFO - epoches number: 100
+2023-10-06 18:43:26,826 - INFO - initial learning rate: 0.0001
+2023-10-06 18:43:26,826 - INFO - epoch: 0 start, learning rate: 0.0001

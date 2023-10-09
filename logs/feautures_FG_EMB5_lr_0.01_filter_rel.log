@@ -1,0 +1,375 @@
+2023-10-05 18:40:57,310 - INFO - ----------10_05_18_40_57---------------
+2023-10-05 18:40:57,311 - INFO - ----------start training---------------
+2023-10-05 18:40:57,311 - INFO - feature number: 5
+2023-10-05 18:40:57,311 - INFO - filter type: rel
+2023-10-05 18:40:57,311 - INFO - epoches number: 1
+2023-10-05 18:40:57,311 - INFO - initial learning rate: 0.01
+2023-10-05 18:40:57,311 - INFO - epoch: 0 start, learning rate: 0.01
+2023-10-06 04:19:20,332 - INFO - ----------10_06_04_19_20---------------
+2023-10-06 04:19:20,332 - INFO - ----------start training---------------
+2023-10-06 04:19:20,332 - INFO - feature number: 5
+2023-10-06 04:19:20,332 - INFO - feature type: FG_EMB
+2023-10-06 04:19:20,332 - INFO - filter type: rel
+2023-10-06 04:19:20,332 - INFO - epoches number: 100
+2023-10-06 04:19:20,332 - INFO - initial learning rate: 0.01
+2023-10-06 04:19:20,332 - INFO - epoch: 0 start, learning rate: 0.01
+2023-10-06 04:20:59,738 - INFO - epoch: 0 end, loss: 2.0787697744657248
+2023-10-06 04:21:12,412 - INFO - epoch: 0 validation, acc: 0.6757312598313822, loss: 2.078660068864968
+2023-10-06 04:21:12,413 - INFO - epoch: 0 model saved
+2023-10-06 04:21:12,413 - INFO - epoch: 1 start, learning rate: 0.01
+2023-10-06 04:22:53,335 - INFO - epoch: 1 end, loss: 2.0727802525364214
+2023-10-06 04:23:06,069 - INFO - epoch: 1 validation, acc: 0.681056060333538, loss: 2.073743079860118
+2023-10-06 04:23:06,070 - INFO - epoch: 1 model saved
+2023-10-06 04:23:06,070 - INFO - epoch: 2 start, learning rate: 0.01
+2023-10-06 04:24:44,082 - INFO - epoch: 2 end, loss: 2.0695710038016206
+2023-10-06 04:24:56,804 - INFO - epoch: 2 validation, acc: 0.6850088552776126, loss: 2.069722545062893
+2023-10-06 04:24:56,805 - INFO - epoch: 2 model saved
+2023-10-06 04:24:56,805 - INFO - epoch: 3 start, learning rate: 0.01
+2023-10-06 04:26:37,370 - INFO - epoch: 3 end, loss: 2.0681214727209314
+2023-10-06 04:26:50,110 - INFO - epoch: 3 validation, acc: 0.6862158302346515, loss: 2.0683793978181204
+2023-10-06 04:26:50,111 - INFO - epoch: 3 model saved
+2023-10-06 04:26:50,111 - INFO - epoch: 4 start, learning rate: 0.01
+2023-10-06 04:28:30,018 - INFO - epoch: 4 end, loss: 2.0666928808238865
+2023-10-06 04:28:42,745 - INFO - epoch: 4 validation, acc: 0.6851162846807668, loss: 2.0696162637476356
+2023-10-06 04:28:42,746 - INFO - epoch: 4 model saved
+2023-10-06 04:28:42,746 - INFO - epoch: 5 start, learning rate: 0.01
+2023-10-06 04:30:22,122 - INFO - epoch: 5 end, loss: 2.0669722662133343
+2023-10-06 04:30:34,831 - INFO - epoch: 5 validation, acc: 0.6850496237668122, loss: 2.0697345171215673
+2023-10-06 04:30:34,832 - INFO - epoch: 5 model saved
+2023-10-06 04:30:34,832 - INFO - epoch: 6 start, learning rate: 0.01
+2023-10-06 04:32:12,744 - INFO - epoch: 6 end, loss: 2.06674802035838
+2023-10-06 04:32:25,526 - INFO - epoch: 6 validation, acc: 0.6840764025861319, loss: 2.0706783577922367
+2023-10-06 04:32:25,526 - INFO - epoch: 6 model saved
+2023-10-06 04:32:25,526 - INFO - epoch: 7 start, learning rate: 0.01
+2023-10-06 04:34:21,701 - INFO - epoch: 7 end, loss: 2.067172666086787
+2023-10-06 04:34:45,159 - INFO - epoch: 7 validation, acc: 0.6860137728726223, loss: 2.0687402182824464
+2023-10-06 04:34:45,160 - INFO - epoch: 7 model saved
+2023-10-06 04:34:45,160 - INFO - epoch: 8 start, learning rate: 0.01
+2023-10-06 04:37:20,146 - INFO - epoch: 8 end, loss: 2.062230123572663
+2023-10-06 04:37:43,803 - INFO - epoch: 8 validation, acc: 0.6894747743488926, loss: 2.065315962468135
+2023-10-06 04:37:43,803 - INFO - epoch: 8 model saved
+2023-10-06 04:37:43,803 - INFO - epoch: 9 start, learning rate: 0.01
+2023-10-06 04:40:17,937 - INFO - epoch: 9 end, loss: 2.0623432762886664
+2023-10-06 04:40:41,947 - INFO - epoch: 9 validation, acc: 0.6925440491867261, loss: 2.0621344077320973
+2023-10-06 04:40:41,948 - INFO - epoch: 9 model saved
+2023-10-06 04:40:41,948 - INFO - epoch: 10 start, learning rate: 0.01
+2023-10-06 04:43:13,533 - INFO - epoch: 10 end, loss: 2.061567158403596
+2023-10-06 04:43:37,844 - INFO - epoch: 10 validation, acc: 0.6924487107843807, loss: 2.0623865944238164
+2023-10-06 04:43:37,844 - INFO - epoch: 10 model saved
+2023-10-06 04:43:37,845 - INFO - epoch: 11 start, learning rate: 0.01
+2023-10-06 04:46:11,644 - INFO - epoch: 11 end, loss: 2.061396173275431
+2023-10-06 04:46:35,905 - INFO - epoch: 11 validation, acc: 0.6924135562008084, loss: 2.062313022540683
+2023-10-06 04:46:35,906 - INFO - epoch: 11 model saved
+2023-10-06 04:46:35,906 - INFO - epoch: 12 start, learning rate: 0.01
+2023-10-06 04:49:10,943 - INFO - epoch: 12 end, loss: 2.0599358381005994
+2023-10-06 04:49:34,583 - INFO - epoch: 12 validation, acc: 0.6923342818920118, loss: 2.0623697943889154
+2023-10-06 04:49:34,583 - INFO - epoch: 12 model saved
+2023-10-06 04:49:34,583 - INFO - epoch: 13 start, learning rate: 0.01
+2023-10-06 04:52:07,524 - INFO - epoch: 13 end, loss: 2.060188322251252
+2023-10-06 04:52:31,518 - INFO - epoch: 13 validation, acc: 0.6895922256435022, loss: 2.065207489018715
+2023-10-06 04:52:31,519 - INFO - epoch: 13 model saved
+2023-10-06 04:52:31,519 - INFO - epoch: 14 start, learning rate: 0.01
+2023-10-06 16:18:40,451 - INFO - ----------10_06_16_18_40---------------
+2023-10-06 16:18:40,451 - INFO - ----------start training---------------
+2023-10-06 16:18:40,451 - INFO - feature number: 5
+2023-10-06 16:18:40,451 - INFO - feature type: FG_EMB
+2023-10-06 16:18:40,451 - INFO - filter type: rel
+2023-10-06 16:18:40,451 - INFO - epoches number: 100
+2023-10-06 16:18:40,452 - INFO - initial learning rate: 0.01
+2023-10-06 16:18:40,452 - INFO - epoch: 0 start, learning rate: 0.01
+2023-10-06 16:20:28,137 - INFO - epoch: 0 end, loss: 2.0786778550153686
+2023-10-06 16:20:40,766 - INFO - epoch: 0 validation, acc: 0.6712320453171182, loss: 2.0837018395983096
+2023-10-06 16:20:40,766 - INFO - epoch: 0 model saved
+2023-10-06 16:20:40,767 - INFO - epoch: 1 start, learning rate: 0.01
+2023-10-06 16:22:28,782 - INFO - epoch: 1 end, loss: 2.074220279984261
+2023-10-06 16:22:41,384 - INFO - epoch: 1 validation, acc: 0.6757887784415696, loss: 2.0788003289601495
+2023-10-06 16:22:41,385 - INFO - epoch: 1 model saved
+2023-10-06 16:22:41,385 - INFO - epoch: 2 start, learning rate: 0.01
+2023-10-06 16:24:26,950 - INFO - epoch: 2 end, loss: 2.074070055509493
+2023-10-06 16:24:39,463 - INFO - epoch: 2 validation, acc: 0.6787865341641819, loss: 2.0759142864885116
+2023-10-06 16:24:39,463 - INFO - epoch: 2 model saved
+2023-10-06 16:24:39,463 - INFO - epoch: 3 start, learning rate: 0.01
+2023-10-06 16:26:25,724 - INFO - epoch: 3 end, loss: 2.0718958548151596
+2023-10-06 16:26:43,716 - INFO - epoch: 3 validation, acc: 0.6786542166404375, loss: 2.076025594345411
+2023-10-06 16:26:43,717 - INFO - epoch: 3 model saved
+2023-10-06 16:26:43,717 - INFO - epoch: 4 start, learning rate: 0.01
+2023-10-06 16:28:33,242 - INFO - epoch: 4 end, loss: 2.0710881948268436
+2023-10-06 16:28:45,818 - INFO - epoch: 4 validation, acc: 0.6771808978524634, loss: 2.077534369940483
+2023-10-06 16:28:45,819 - INFO - epoch: 4 model saved
+2023-10-06 16:28:45,819 - INFO - epoch: 5 start, learning rate: 0.01
+2023-10-06 16:30:35,824 - INFO - epoch: 5 end, loss: 2.0703705971832282
+2023-10-06 16:30:53,908 - INFO - epoch: 5 validation, acc: 0.6805345840469764, loss: 2.0743561931278394
+2023-10-06 16:30:53,909 - INFO - epoch: 5 model saved
+2023-10-06 16:30:53,909 - INFO - epoch: 6 start, learning rate: 0.01
+2023-10-06 16:32:38,919 - INFO - epoch: 6 end, loss: 2.0702360423774757
+2023-10-06 16:32:51,517 - INFO - epoch: 6 validation, acc: 0.6791730129243428, loss: 2.075524057680796
+2023-10-06 16:32:51,517 - INFO - epoch: 6 model saved
+2023-10-06 16:32:51,517 - INFO - epoch: 7 start, learning rate: 0.01
+2023-10-06 16:34:36,683 - INFO - epoch: 7 end, loss: 2.0703340335077076
+2023-10-06 16:34:49,245 - INFO - epoch: 7 validation, acc: 0.6793739126618361, loss: 2.075233595141513
+2023-10-06 16:34:49,245 - INFO - epoch: 7 model saved
+2023-10-06 16:34:49,245 - INFO - epoch: 8 start, learning rate: 0.01
+2023-10-06 16:36:33,336 - INFO - epoch: 8 end, loss: 2.0693044545252106
+2023-10-06 16:36:45,993 - INFO - epoch: 8 validation, acc: 0.6798426666024004, loss: 2.074935232780515
+2023-10-06 16:36:45,993 - INFO - epoch: 8 model saved
+2023-10-06 16:36:45,993 - INFO - epoch: 9 start, learning rate: 0.01
+2023-10-06 16:38:36,264 - INFO - epoch: 9 end, loss: 2.0691065063043736
+2023-10-06 16:38:48,843 - INFO - epoch: 9 validation, acc: 0.67992711012311, loss: 2.074780557606671
+2023-10-06 16:38:48,844 - INFO - epoch: 9 model saved
+2023-10-06 16:38:48,844 - INFO - epoch: 10 start, learning rate: 0.01
+2023-10-06 16:40:42,192 - INFO - epoch: 10 end, loss: 2.0703267866649657
+2023-10-06 16:40:54,728 - INFO - epoch: 10 validation, acc: 0.676735796395042, loss: 2.078093193112473
+2023-10-06 16:40:54,729 - INFO - epoch: 10 model saved
+2023-10-06 16:40:54,729 - INFO - epoch: 11 start, learning rate: 0.01
+2023-10-06 16:42:43,795 - INFO - epoch: 11 end, loss: 2.0686113921006926
+2023-10-06 16:43:01,842 - INFO - epoch: 11 validation, acc: 0.6844211701997366, loss: 2.0703906240390415
+2023-10-06 16:43:01,843 - INFO - epoch: 11 model saved
+2023-10-06 16:43:01,843 - INFO - epoch: 12 start, learning rate: 0.01
+2023-10-06 16:44:56,757 - INFO - epoch: 12 end, loss: 2.0662109153460793
+2023-10-06 16:45:09,347 - INFO - epoch: 12 validation, acc: 0.6823225872937191, loss: 2.072418608900803
+2023-10-06 16:45:09,348 - INFO - epoch: 12 model saved
+2023-10-06 16:45:09,348 - INFO - epoch: 13 start, learning rate: 0.01
+2023-10-06 16:46:54,064 - INFO - epoch: 13 end, loss: 2.066592126836506
+2023-10-06 16:47:12,085 - INFO - epoch: 13 validation, acc: 0.6846396247579677, loss: 2.0700104960123324
+2023-10-06 16:47:12,086 - INFO - epoch: 13 model saved
+2023-10-06 16:47:12,086 - INFO - epoch: 14 start, learning rate: 0.01
+2023-10-06 16:49:14,462 - INFO - epoch: 14 end, loss: 2.0653275543890013
+2023-10-06 16:49:27,009 - INFO - epoch: 14 validation, acc: 0.6851349931648665, loss: 2.0696190383403477
+2023-10-06 16:49:27,009 - INFO - epoch: 14 model saved
+2023-10-06 16:49:27,009 - INFO - epoch: 15 start, learning rate: 0.01
+2023-10-06 16:51:06,027 - INFO - epoch: 15 end, loss: 2.065371465717431
+2023-10-06 16:51:18,620 - INFO - epoch: 15 validation, acc: 0.6837788020927511, loss: 2.0710306178809055
+2023-10-06 16:51:18,620 - INFO - epoch: 15 model saved
+2023-10-06 16:51:18,620 - INFO - epoch: 16 start, learning rate: 0.01
+2023-10-06 16:53:03,023 - INFO - epoch: 16 end, loss: 2.0642983325683155
+2023-10-06 16:53:21,030 - INFO - epoch: 16 validation, acc: 0.6866092432873788, loss: 2.0681683648767257
+2023-10-06 16:53:21,031 - INFO - epoch: 16 model saved
+2023-10-06 16:53:21,031 - INFO - epoch: 17 start, learning rate: 0.01
+2023-10-06 16:55:04,069 - INFO - epoch: 17 end, loss: 2.064226481484127
+2023-10-06 16:55:16,681 - INFO - epoch: 17 validation, acc: 0.6858615784336263, loss: 2.0688929104636893
+2023-10-06 16:55:16,682 - INFO - epoch: 17 model saved
+2023-10-06 16:55:16,682 - INFO - epoch: 18 start, learning rate: 0.01
+2023-10-06 16:57:02,892 - INFO - epoch: 18 end, loss: 2.06379336365911
+2023-10-06 16:57:15,346 - INFO - epoch: 18 validation, acc: 0.6871001409448156, loss: 2.0676733526443902
+2023-10-06 16:57:15,346 - INFO - epoch: 18 model saved
+2023-10-06 16:57:15,346 - INFO - epoch: 19 start, learning rate: 0.01
+2023-10-06 16:58:52,220 - INFO - epoch: 19 end, loss: 2.0635353280090465
+2023-10-06 16:59:04,761 - INFO - epoch: 19 validation, acc: 0.685197993618946, loss: 2.0695680486329433
+2023-10-06 16:59:04,762 - INFO - epoch: 19 model saved
+2023-10-06 16:59:04,762 - INFO - epoch: 20 start, learning rate: 0.01
+2023-10-06 17:00:52,407 - INFO - epoch: 20 end, loss: 2.064103144428549
+2023-10-06 17:01:10,406 - INFO - epoch: 20 validation, acc: 0.6866832848335812, loss: 2.0681408347450327
+2023-10-06 17:01:10,407 - INFO - epoch: 20 model saved
+2023-10-06 17:01:10,407 - INFO - epoch: 21 start, learning rate: 0.01
+2023-10-06 17:03:03,270 - INFO - epoch: 21 end, loss: 2.0607667345994996
+2023-10-06 17:03:15,863 - INFO - epoch: 21 validation, acc: 0.6915060122496267, loss: 2.0632423722085607
+2023-10-06 17:03:15,864 - INFO - epoch: 21 model saved
+2023-10-06 17:03:15,864 - INFO - epoch: 22 start, learning rate: 0.01
+2023-10-06 17:05:05,177 - INFO - epoch: 22 end, loss: 2.058844423356884
+2023-10-06 17:05:23,276 - INFO - epoch: 22 validation, acc: 0.692774256220549, loss: 2.0620428604608976
+2023-10-06 17:05:23,277 - INFO - epoch: 22 model saved
+2023-10-06 17:05:23,277 - INFO - epoch: 23 start, learning rate: 0.01
+2023-10-06 17:07:10,135 - INFO - epoch: 23 end, loss: 2.0598723021733725
+2023-10-06 17:07:22,727 - INFO - epoch: 23 validation, acc: 0.6910679819632467, loss: 2.0637382891567557
+2023-10-06 17:07:22,727 - INFO - epoch: 23 model saved
+2023-10-06 17:07:22,727 - INFO - epoch: 24 start, learning rate: 0.01
+2023-10-06 17:09:04,040 - INFO - epoch: 24 end, loss: 2.059644382785782
+2023-10-06 17:09:16,617 - INFO - epoch: 24 validation, acc: 0.6932039983950958, loss: 2.0615671493472
+2023-10-06 17:09:16,618 - INFO - epoch: 24 model saved
+2023-10-06 17:09:16,618 - INFO - epoch: 25 start, learning rate: 0.01
+2023-10-06 17:11:08,666 - INFO - epoch: 25 end, loss: 2.0584647246167385
+2023-10-06 17:11:26,710 - INFO - epoch: 25 validation, acc: 0.6930004723528681, loss: 2.061808519651971
+2023-10-06 17:11:26,711 - INFO - epoch: 25 model saved
+2023-10-06 17:11:26,711 - INFO - epoch: 26 start, learning rate: 0.01
+2023-10-06 17:13:08,048 - INFO - epoch: 26 end, loss: 2.0583786310214243
+2023-10-06 17:13:20,610 - INFO - epoch: 26 validation, acc: 0.6907797191187813, loss: 2.0639537844618676
+2023-10-06 17:13:20,610 - INFO - epoch: 26 model saved
+2023-10-06 17:13:20,610 - INFO - epoch: 27 start, learning rate: 0.01
+2023-10-06 17:15:06,373 - INFO - epoch: 27 end, loss: 2.05732426563534
+2023-10-06 17:15:18,888 - INFO - epoch: 27 validation, acc: 0.6920487248890702, loss: 2.0627117322978905
+2023-10-06 17:15:18,889 - INFO - epoch: 27 model saved
+2023-10-06 17:15:18,889 - INFO - epoch: 28 start, learning rate: 0.01
+2023-10-06 17:17:06,031 - INFO - epoch: 28 end, loss: 2.0578837676172292
+2023-10-06 17:17:18,578 - INFO - epoch: 28 validation, acc: 0.6937378971350476, loss: 2.0610723159988393
+2023-10-06 17:17:18,579 - INFO - epoch: 28 model saved
+2023-10-06 17:17:18,579 - INFO - epoch: 29 start, learning rate: 0.01
+2023-10-06 17:19:06,473 - INFO - epoch: 29 end, loss: 2.0573864187510185
+2023-10-06 17:19:19,085 - INFO - epoch: 29 validation, acc: 0.6934481758092605, loss: 2.0612877055424783
+2023-10-06 17:19:19,086 - INFO - epoch: 29 model saved
+2023-10-06 17:19:19,086 - INFO - epoch: 30 start, learning rate: 0.01
+2023-10-06 17:21:00,391 - INFO - epoch: 30 end, loss: 2.0580409033128686
+2023-10-06 17:21:12,889 - INFO - epoch: 30 validation, acc: 0.6906971698878558, loss: 2.064132028965216
+2023-10-06 17:21:12,889 - INFO - epoch: 30 model saved
+2023-10-06 17:21:12,889 - INFO - epoch: 31 start, learning rate: 0.01
+2023-10-06 17:22:59,933 - INFO - epoch: 31 end, loss: 2.059271549157255
+2023-10-06 17:23:17,937 - INFO - epoch: 31 validation, acc: 0.693453817665004, loss: 2.0613517795550416
+2023-10-06 17:23:17,938 - INFO - epoch: 31 model saved
+2023-10-06 17:23:17,938 - INFO - epoch: 32 start, learning rate: 0.01
+2023-10-06 17:25:03,573 - INFO - epoch: 32 end, loss: 2.0581601460268155
+2023-10-06 17:25:16,126 - INFO - epoch: 32 validation, acc: 0.6949405170449287, loss: 2.0598432303315466
+2023-10-06 17:25:16,127 - INFO - epoch: 32 model saved
+2023-10-06 17:25:16,127 - INFO - epoch: 33 start, learning rate: 0.01
+2023-10-06 17:27:07,016 - INFO - epoch: 33 end, loss: 2.0583713361849374
+2023-10-06 17:27:25,077 - INFO - epoch: 33 validation, acc: 0.6919488531264377, loss: 2.0628814012267473
+2023-10-06 17:27:25,078 - INFO - epoch: 33 model saved
+2023-10-06 17:27:25,078 - INFO - epoch: 34 start, learning rate: 0.01
+2023-10-06 17:29:13,682 - INFO - epoch: 34 end, loss: 2.05835761672154
+2023-10-06 17:29:26,264 - INFO - epoch: 34 validation, acc: 0.6942491253582542, loss: 2.0605223094814673
+2023-10-06 17:29:26,264 - INFO - epoch: 34 model saved
+2023-10-06 17:29:26,264 - INFO - epoch: 35 start, learning rate: 0.01
+2023-10-06 17:31:06,024 - INFO - epoch: 35 end, loss: 2.057386981889785
+2023-10-06 17:31:18,569 - INFO - epoch: 35 validation, acc: 0.6963668300834539, loss: 2.0584095680755676
+2023-10-06 17:31:18,570 - INFO - epoch: 35 model saved
+2023-10-06 17:31:18,570 - INFO - epoch: 36 start, learning rate: 0.01
+2023-10-06 17:33:07,238 - INFO - epoch: 36 end, loss: 2.056310205116739
+2023-10-06 17:33:19,831 - INFO - epoch: 36 validation, acc: 0.6973307953564356, loss: 2.057455370765175
+2023-10-06 17:33:19,831 - INFO - epoch: 36 model saved
+2023-10-06 17:33:19,831 - INFO - epoch: 37 start, learning rate: 0.01
+2023-10-06 17:35:07,040 - INFO - epoch: 37 end, loss: 2.056424053949745
+2023-10-06 17:35:19,630 - INFO - epoch: 37 validation, acc: 0.6950133842256478, loss: 2.059845186918799
+2023-10-06 17:35:19,631 - INFO - epoch: 37 model saved
+2023-10-06 17:35:19,631 - INFO - epoch: 38 start, learning rate: 0.01
+2023-10-06 17:37:05,032 - INFO - epoch: 38 end, loss: 2.0547279461942196
+2023-10-06 17:37:17,635 - INFO - epoch: 38 validation, acc: 0.6990940845795115, loss: 2.0556616578623217
+2023-10-06 17:37:17,636 - INFO - epoch: 38 model saved
+2023-10-06 17:37:17,636 - INFO - epoch: 39 start, learning rate: 0.01
+2023-10-06 17:39:09,147 - INFO - epoch: 39 end, loss: 2.0539024568487547
+2023-10-06 17:39:21,732 - INFO - epoch: 39 validation, acc: 0.6989981599954186, loss: 2.0558205139062657
+2023-10-06 17:39:21,733 - INFO - epoch: 39 model saved
+2023-10-06 17:39:21,733 - INFO - epoch: 40 start, learning rate: 0.01
+2023-10-06 17:41:01,605 - INFO - epoch: 40 end, loss: 2.055475304265746
+2023-10-06 17:41:14,186 - INFO - epoch: 40 validation, acc: 0.6970940077728001, loss: 2.0576869646474703
+2023-10-06 17:41:14,186 - INFO - epoch: 40 model saved
+2023-10-06 17:41:14,186 - INFO - epoch: 41 start, learning rate: 0.01
+2023-10-06 17:42:51,281 - INFO - epoch: 41 end, loss: 2.054867785408163
+2023-10-06 17:43:03,925 - INFO - epoch: 41 validation, acc: 0.696722061325326, loss: 2.0580930542441567
+2023-10-06 17:43:03,926 - INFO - epoch: 41 model saved
+2023-10-06 17:43:03,926 - INFO - epoch: 42 start, learning rate: 0.01
+2023-10-06 17:44:48,919 - INFO - epoch: 42 end, loss: 2.055684356508704
+2023-10-06 17:45:06,968 - INFO - epoch: 42 validation, acc: 0.6994246910246035, loss: 2.055436133357809
+2023-10-06 17:45:06,969 - INFO - epoch: 42 model saved
+2023-10-06 17:45:06,969 - INFO - epoch: 43 start, learning rate: 0.01
+2023-10-06 17:46:52,087 - INFO - epoch: 43 end, loss: 2.054416721600285
+2023-10-06 17:47:04,711 - INFO - epoch: 43 validation, acc: 0.6991466415296332, loss: 2.05568735145654
+2023-10-06 17:47:04,711 - INFO - epoch: 43 model saved
+2023-10-06 17:47:04,711 - INFO - epoch: 44 start, learning rate: 0.01
+2023-10-06 17:48:50,867 - INFO - epoch: 44 end, loss: 2.054735988373459
+2023-10-06 17:49:03,456 - INFO - epoch: 44 validation, acc: 0.6968398831833856, loss: 2.0579618286302033
+2023-10-06 17:49:03,457 - INFO - epoch: 44 model saved
+2023-10-06 17:49:03,457 - INFO - epoch: 45 start, learning rate: 0.01
+2023-10-06 17:50:56,922 - INFO - epoch: 45 end, loss: 2.0545542370740115
+2023-10-06 17:51:09,486 - INFO - epoch: 45 validation, acc: 0.6969016497467457, loss: 2.0579247155284768
+2023-10-06 17:51:09,486 - INFO - epoch: 45 model saved
+2023-10-06 17:51:09,487 - INFO - epoch: 46 start, learning rate: 0.01
+2023-10-06 17:52:54,234 - INFO - epoch: 46 end, loss: 2.054489848708166
+2023-10-06 17:53:12,243 - INFO - epoch: 46 validation, acc: 0.6985148069249978, loss: 2.0562747875195693
+2023-10-06 17:53:12,244 - INFO - epoch: 46 model saved
+2023-10-06 17:53:12,244 - INFO - epoch: 47 start, learning rate: 0.01
+2023-10-06 17:55:00,533 - INFO - epoch: 47 end, loss: 2.0536851456087097
+2023-10-06 17:55:18,568 - INFO - epoch: 47 validation, acc: 0.6992953262301711, loss: 2.055514487900829
+2023-10-06 17:55:18,568 - INFO - epoch: 47 model saved
+2023-10-06 17:55:18,568 - INFO - epoch: 48 start, learning rate: 0.01
+2023-10-06 17:57:06,313 - INFO - epoch: 48 end, loss: 2.052744395206438
+2023-10-06 17:57:18,863 - INFO - epoch: 48 validation, acc: 0.6976532281861428, loss: 2.0570683960488765
+2023-10-06 17:57:18,864 - INFO - epoch: 48 model saved
+2023-10-06 17:57:18,864 - INFO - epoch: 49 start, learning rate: 0.01
+2023-10-06 17:58:56,142 - INFO - epoch: 49 end, loss: 2.053970957641271
+2023-10-06 17:59:08,662 - INFO - epoch: 49 validation, acc: 0.6986476020276337, loss: 2.056123244005981
+2023-10-06 17:59:08,663 - INFO - epoch: 49 model saved
+2023-10-06 17:59:08,663 - INFO - epoch: 50 start, learning rate: 0.01
+2023-10-06 18:01:01,108 - INFO - epoch: 50 end, loss: 2.0528142389018336
+2023-10-06 18:01:19,159 - INFO - epoch: 50 validation, acc: 0.6994603261445043, loss: 2.0553468946984736
+2023-10-06 18:01:19,160 - INFO - epoch: 50 model saved
+2023-10-06 18:01:19,160 - INFO - epoch: 51 start, learning rate: 0.01
+2023-10-06 18:03:16,310 - INFO - epoch: 51 end, loss: 2.0545399401861855
+2023-10-06 18:03:28,840 - INFO - epoch: 51 validation, acc: 0.69738852141754, loss: 2.0574887635845136
+2023-10-06 18:03:28,840 - INFO - epoch: 51 model saved
+2023-10-06 18:03:28,840 - INFO - epoch: 52 start, learning rate: 0.01
+2023-10-06 18:05:20,059 - INFO - epoch: 52 end, loss: 2.0555900363174
+2023-10-06 18:05:32,605 - INFO - epoch: 52 validation, acc: 0.6997202797851791, loss: 2.0550948769449486
+2023-10-06 18:05:32,606 - INFO - epoch: 52 model saved
+2023-10-06 18:05:32,606 - INFO - epoch: 53 start, learning rate: 0.01
+2023-10-06 18:07:17,492 - INFO - epoch: 53 end, loss: 2.054057347922428
+2023-10-06 18:07:30,052 - INFO - epoch: 53 validation, acc: 0.6987381226344294, loss: 2.0561008457571583
+2023-10-06 18:07:30,053 - INFO - epoch: 53 model saved
+2023-10-06 18:07:30,053 - INFO - epoch: 54 start, learning rate: 0.01
+2023-10-06 18:09:20,177 - INFO - epoch: 54 end, loss: 2.0538193965553933
+2023-10-06 18:09:32,730 - INFO - epoch: 54 validation, acc: 0.6985369138899327, loss: 2.056270341475338
+2023-10-06 18:09:32,730 - INFO - epoch: 54 model saved
+2023-10-06 18:09:32,731 - INFO - epoch: 55 start, learning rate: 0.01
+2023-10-06 18:11:17,804 - INFO - epoch: 55 end, loss: 2.0533799530494057
+2023-10-06 18:11:30,354 - INFO - epoch: 55 validation, acc: 0.6995603312321435, loss: 2.055292167408626
+2023-10-06 18:11:30,355 - INFO - epoch: 55 model saved
+2023-10-06 18:11:30,355 - INFO - epoch: 56 start, learning rate: 0.01
+2023-10-06 18:13:12,234 - INFO - epoch: 56 end, loss: 2.054216359132977
+2023-10-06 18:13:29,843 - INFO - epoch: 56 validation, acc: 0.6991721226866738, loss: 2.0556252430664808
+2023-10-06 18:13:29,844 - INFO - epoch: 56 model saved
+2023-10-06 18:13:29,844 - INFO - epoch: 57 start, learning rate: 0.01
+2023-10-06 18:15:20,571 - INFO - epoch: 57 end, loss: 2.0533540111080066
+2023-10-06 18:15:33,193 - INFO - epoch: 57 validation, acc: 0.6998284456016544, loss: 2.055037484676101
+2023-10-06 18:15:33,194 - INFO - epoch: 57 model saved
+2023-10-06 18:15:33,194 - INFO - epoch: 58 start, learning rate: 0.01
+2023-10-06 18:17:14,407 - INFO - epoch: 58 end, loss: 2.0559511377396844
+2023-10-06 18:17:32,432 - INFO - epoch: 58 validation, acc: 0.6989431370582703, loss: 2.0558963318549086
+2023-10-06 18:17:32,432 - INFO - epoch: 58 model saved
+2023-10-06 18:17:32,433 - INFO - epoch: 59 start, learning rate: 0.01
+2023-10-06 18:19:19,050 - INFO - epoch: 59 end, loss: 2.0534508701856495
+2023-10-06 18:19:31,677 - INFO - epoch: 59 validation, acc: 0.7001925329675606, loss: 2.0545688941111715
+2023-10-06 18:19:31,678 - INFO - epoch: 59 model saved
+2023-10-06 18:19:31,678 - INFO - epoch: 60 start, learning rate: 0.01
+2023-10-06 18:21:11,250 - INFO - epoch: 60 end, loss: 2.0534247163706607
+2023-10-06 18:21:29,266 - INFO - epoch: 60 validation, acc: 0.697638690530756, loss: 2.0572071861996633
+2023-10-06 18:21:29,266 - INFO - epoch: 60 model saved
+2023-10-06 18:21:29,266 - INFO - epoch: 61 start, learning rate: 0.01
+2023-10-06 18:23:10,496 - INFO - epoch: 61 end, loss: 2.0533193869187922
+2023-10-06 18:23:23,090 - INFO - epoch: 61 validation, acc: 0.6993942458399088, loss: 2.0554189773760165
+2023-10-06 18:23:23,090 - INFO - epoch: 61 model saved
+2023-10-06 18:23:23,090 - INFO - epoch: 62 start, learning rate: 0.01
+2023-10-06 18:25:13,781 - INFO - epoch: 62 end, loss: 2.052649581896373
+2023-10-06 18:25:26,370 - INFO - epoch: 62 validation, acc: 0.6982324120668242, loss: 2.056583785212278
+2023-10-06 18:25:26,371 - INFO - epoch: 62 model saved
+2023-10-06 18:25:26,371 - INFO - epoch: 63 start, learning rate: 0.01
+2023-10-06 18:27:07,896 - INFO - epoch: 63 end, loss: 2.0531269003800667
+2023-10-06 18:27:20,496 - INFO - epoch: 63 validation, acc: 0.6995353853048324, loss: 2.0552611839897343
+2023-10-06 18:27:20,497 - INFO - epoch: 63 model saved
+2023-10-06 18:27:20,497 - INFO - epoch: 64 start, learning rate: 0.01
+2023-10-06 18:29:07,932 - INFO - epoch: 64 end, loss: 2.0530467464489006
+2023-10-06 18:29:20,501 - INFO - epoch: 64 validation, acc: 0.6973487802930413, loss: 2.0574395878614746
+2023-10-06 18:29:20,502 - INFO - epoch: 64 model saved
+2023-10-06 18:29:20,502 - INFO - epoch: 65 start, learning rate: 0.01
+2023-10-06 18:31:03,103 - INFO - epoch: 65 end, loss: 2.052418197141544
+2023-10-06 18:31:15,703 - INFO - epoch: 65 validation, acc: 0.6994252203180525, loss: 2.05541225024592
+2023-10-06 18:31:15,704 - INFO - epoch: 65 model saved
+2023-10-06 18:31:15,704 - INFO - epoch: 66 start, learning rate: 0.01
+2023-10-06 18:32:53,059 - INFO - epoch: 66 end, loss: 2.052241195105339
+2023-10-06 18:33:05,603 - INFO - epoch: 66 validation, acc: 0.6982369083309176, loss: 2.0565402895107114
+2023-10-06 18:33:05,604 - INFO - epoch: 66 model saved
+2023-10-06 18:33:05,604 - INFO - epoch: 67 start, learning rate: 0.01
+2023-10-06 18:34:47,566 - INFO - epoch: 67 end, loss: 2.052351426008342
+2023-10-06 18:35:00,154 - INFO - epoch: 67 validation, acc: 0.6988729140777733, loss: 2.0559528633234225
+2023-10-06 18:35:00,155 - INFO - epoch: 67 model saved
+2023-10-06 18:35:00,155 - INFO - epoch: 68 start, learning rate: 0.01
+2023-10-06 18:36:45,438 - INFO - epoch: 68 end, loss: 2.0533604920366355
+2023-10-06 18:36:57,966 - INFO - epoch: 68 validation, acc: 0.7003211864099285, loss: 2.0544932918879177
+2023-10-06 18:36:57,967 - INFO - epoch: 68 model saved
+2023-10-06 18:36:57,967 - INFO - epoch: 69 start, learning rate: 0.01
+2023-10-06 18:38:37,170 - INFO - epoch: 69 end, loss: 2.05389930178433
+2023-10-06 18:38:49,762 - INFO - epoch: 69 validation, acc: 0.6972678723072949, loss: 2.0575416318538187
+2023-10-06 18:38:49,763 - INFO - epoch: 69 model saved
+2023-10-06 18:38:49,763 - INFO - epoch: 70 start, learning rate: 0.01
+2023-10-06 18:40:44,852 - INFO - epoch: 70 end, loss: 2.053698833380227
+2023-10-06 18:40:57,446 - INFO - epoch: 70 validation, acc: 0.7005927135383274, loss: 2.0542310548445033
+2023-10-06 18:40:57,447 - INFO - epoch: 70 model saved
+2023-10-06 18:40:57,447 - INFO - epoch: 71 start, learning rate: 0.01
+2023-10-06 18:42:36,025 - INFO - epoch: 71 end, loss: 2.0527781070889652
+2023-10-06 18:42:48,660 - INFO - epoch: 71 validation, acc: 0.7007048447695607, loss: 2.054105623908665
+2023-10-06 18:42:48,661 - INFO - epoch: 71 model saved
+2023-10-06 18:42:48,661 - INFO - epoch: 72 start, learning rate: 0.01
+2023-10-06 18:43:20,632 - INFO - ----------10_06_18_43_20---------------
+2023-10-06 18:43:20,632 - INFO - ----------start training---------------
+2023-10-06 18:43:20,632 - INFO - feature number: 5
+2023-10-06 18:43:20,632 - INFO - feature type: FG_EMB
+2023-10-06 18:43:20,632 - INFO - filter type: rel
+2023-10-06 18:43:20,632 - INFO - epoches number: 100
+2023-10-06 18:43:20,632 - INFO - initial learning rate: 0.01
+2023-10-06 18:43:20,632 - INFO - epoch: 0 start, learning rate: 0.01
